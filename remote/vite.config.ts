@@ -12,6 +12,20 @@ export default defineConfig({
       exposes: {
         "./RemoteApp": "./src/App.tsx",
       },
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: "19.2.0",
+          strictVersion: false,
+          shareScope: "default",
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: "19.2.0",
+          strictVersion: false,
+          shareScope: "default",
+        },
+      },
     }),
   ],
 });

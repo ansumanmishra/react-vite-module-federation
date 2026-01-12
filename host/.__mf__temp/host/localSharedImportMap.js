@@ -19,7 +19,7 @@
       
           "react": {
             name: "react",
-            version: "19.2.3",
+            version: "19.2.0",
             scope: ["default"],
             loaded: false,
             from: "host",
@@ -41,15 +41,15 @@
               }
             },
             shareConfig: {
-              singleton: false,
-              requiredVersion: "^19.2.3",
+              singleton: true,
+              requiredVersion: "19.2.0",
               
             }
           }
         ,
           "react-dom": {
             name: "react-dom",
-            version: "19.2.3",
+            version: "19.2.0",
             scope: ["default"],
             loaded: false,
             from: "host",
@@ -71,8 +71,8 @@
               }
             },
             shareConfig: {
-              singleton: false,
-              requiredVersion: "^19.2.3",
+              singleton: true,
+              requiredVersion: "19.2.0",
               
             }
           }

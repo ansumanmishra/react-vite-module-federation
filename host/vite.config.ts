@@ -9,16 +9,22 @@ export default defineConfig({
     federation({
       name: "host",
       filename: "host/remoteEntry.js",
-      remotes: {
-        remote: {
-          type: "module",
-          name: "remote",
-          entry: "http://localhost:5173/remoteApp/remoteEntry.js",
-          entryGlobalName: "remoteApp",
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: "19.2.0",
+          strictVersion: false,
           shareScope: "default",
+          version: "19.2.0",
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: "19.2.0",
+          strictVersion: false,
+          shareScope: "default",
+          version: "19.2.0",
         },
       },
-      shared: ["react", "react-dom"],
     }),
   ],
 });
