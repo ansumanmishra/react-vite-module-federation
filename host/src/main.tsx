@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App.tsx";
 
 // Register the remote dynamically
-await registerRemotes([
+registerRemotes([
   {
     type: "module",
     name: "remote",
