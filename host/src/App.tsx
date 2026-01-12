@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { loadRemote } from "@module-federation/runtime";
+import "./App.css";
 
 const RemoteApp = lazy(async () => {
   const module = await loadRemote<{ default: React.ComponentType }>(
@@ -14,10 +15,12 @@ const RemoteApp = lazy(async () => {
 function App() {
   return (
     <>
-      Hello from host
-      <Suspense fallback={<div>Loading remote...</div>}>
-        <RemoteApp />
-      </Suspense>
+      <div className="host">
+        <h1>From host</h1>
+        <Suspense fallback={<div>Loading remote...</div>}>
+          <RemoteApp />
+        </Suspense>
+      </div>
     </>
   );
 }
