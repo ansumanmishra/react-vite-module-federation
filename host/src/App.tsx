@@ -1,4 +1,4 @@
-import { lazy, Suspense, Component } from "react";
+import { lazy, Suspense, Component, useState, useEffect } from "react";
 import type { ReactNode } from "react";
 import { loadRemote, registerRemotes } from "@module-federation/runtime";
 import "./App.css";
@@ -63,10 +63,18 @@ const RemoteApp = lazy(async () => {
 });
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log('count', count);
+  }, [count]);
+
   return (
     <>
-      <div className="host">
+      <div style={{ padding: "20px", color: "#666", border: "1px solid black", borderRadius: "10px", margin: "10px", backgroundColor: "#f0f0f0", width: "500px", height: "500px" }}>
         <h1>From host</h1>
+        <button onClick={() => setCount(count + 1)}>Click me</button>
+        <p>Count: {count}</p>
         <ErrorBoundary
           fallback={
             <div style={{ padding: "20px", color: "#666" }}>
