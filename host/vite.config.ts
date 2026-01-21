@@ -9,22 +9,23 @@ export default defineConfig({
     federation({
       name: "host",
       filename: "host/remoteEntry.js",
+      exposes: {
+        "./HostApp": "./src/App.tsx",
+      },
       shared: {
         react: {
           singleton: true,
-          requiredVersion: "19.2.0",
-          strictVersion: false,
-          shareScope: "default",
-          version: "19.2.0",
+          requiredVersion: "^19.2.0",
+
         },
         "react-dom": {
           singleton: true,
-          requiredVersion: "19.2.0",
-          strictVersion: false,
-          shareScope: "default",
-          version: "19.2.0",
+          requiredVersion: "^19.2.0",
         },
       },
     }),
   ],
+  server: {
+    port: 7000,
+  },
 });

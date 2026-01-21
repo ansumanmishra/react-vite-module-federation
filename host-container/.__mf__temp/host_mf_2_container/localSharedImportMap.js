@@ -5,12 +5,12 @@
     const importMap = {
       
         "react": async () => {
-          let pkg = await import("__mf__virtual/remote__prebuild__react__prebuild__.js");
+          let pkg = await import("__mf__virtual/host_mf_2_container__prebuild__react__prebuild__.js");
             return pkg;
         }
       ,
         "react-dom": async () => {
-          let pkg = await import("__mf__virtual/remote__prebuild__react_mf_2_dom__prebuild__.js");
+          let pkg = await import("__mf__virtual/host_mf_2_container__prebuild__react_mf_2_dom__prebuild__.js");
             return pkg;
         }
       
@@ -19,10 +19,10 @@
       
           "react": {
             name: "react",
-            version: "19.2.1",
+            version: "19.2.3",
             scope: ["default"],
             loaded: false,
-            from: "remote",
+            from: "host-container",
             async get () {
               if (false) {
                 throw new Error(`Shared module '${"react"}' must be provided by host`);
@@ -42,17 +42,17 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "19.2.0",
+              requiredVersion: "19.2.3",
               
             }
           }
         ,
           "react-dom": {
             name: "react-dom",
-            version: "19.2.1",
+            version: "19.2.3",
             scope: ["default"],
             loaded: false,
-            from: "remote",
+            from: "host-container",
             async get () {
               if (false) {
                 throw new Error(`Shared module '${"react-dom"}' must be provided by host`);
@@ -72,7 +72,7 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "19.2.0",
+              requiredVersion: "19.2.3",
               
             }
           }
